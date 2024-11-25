@@ -1,0 +1,55 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+logfile*
+/*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+
+# Electron
+electron-builder.yml
+*.asar
+
+# Vite
+.vite/
+.vite-cache/
+
+# React
+*.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Package locks
+package-lock.json
+yarn.lock
+
+# Optional, if you're using Mac or Linux
+*.DS_Store
+*.~lock.*
+
+# Generated files
+out/
+.cache/
+*.temp
+*.bak
+*.orig
