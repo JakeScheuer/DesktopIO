@@ -1,10 +1,10 @@
 import React from "react";
+import DevicesPage from "./components/DevicesPage";
 
 const App: React.FC = () => {
   return (
     <div>
-      <h1>IO Controller Dashboard</h1>
-      <p>Control various IO devices from this application.</p>
+      <DevicesPage />
     </div>
   );
 };
