@@ -1,34 +1,51 @@
 # Electron React App
 
-Boilerplate to create a "native" application using electron to interface with the OS and React as it's UI.
+The main use of this project is to create a IO controller for desktop. More details below.
+If you want to just create a different appliction using the same stack, start with the branch `boilerplate`.
+The stack uses electron to interact with the OS, and react for the UI.
+UI comes configured with React 18, Tailwind CSS, Dasiy UI, and Vite.
 
-UI is uses:
+To run start react server, then electron app:
+`npm run react`
+`npm run electron`
 
-- React 18
-- Tailwind CSS
-- Dasiy UI
-- Vite
+By default when the react app runs, it opens in a browser window. To turn this off see comment in `vite.config.ts`
 
 # IO Controller
 
-Managing IO between your tv, monitor, headphones, speakers, and other perephrials can be annoying. This project is to make a simple interface where you can configure different setups and manage your devices in a single window.
+Managing IO in Windows can be annoying. I often switch between displays, audio outputs, and other perephrials and wanted a easier way to do so. This project is to make a simple interface where you can configure different setups and manage your devices in a single window.
 
-View Displays Available
-Highlight Active Display
-Switch Between Displays
-Label or rename devices
+## Features Planned
 
-View Audio Devices
-Highlight Active
-Switch Between
-Label or rename devices
+### Displays
 
-Create AV Setups
-Example: Sim Setup, TV Setup, Gaming Setup
+- View Displays Available
+- Highlight Active Display
+- Switch Between Displays
+- Label / Rename Devices
 
-View Bluetooth Devices
-Add device
-Remove device
-Label device
+### Audio
 
-Enable and disable different devices, EX: on tv, disable sim perephrials
+- View Audio Devices
+- Highlight Active
+- Switch Between
+- Label / Rename Devices
+
+### Custom Configurations
+
+- Create AV Setups/ Configs
+- Example: Sim Setup, TV Setup, Gaming Setup
+
+### Bluetooth
+
+- View Bluetooth Devices
+- Add device
+- Remove device
+- Label device
+
+### USB
+
+- View USB Devices
+- Label Device
+- Disable Device
+- Enable Device
