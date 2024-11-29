@@ -14,6 +14,7 @@ const DeviceSection = ({ name, devices }: DeviceSectionProps) => {
         {devices.map((d: DeviceProps, i: number) => {
           return (
             <Device
+              key={i}
               name={d.name}
               isActive={d.isActive}
               systemName={d.systemName}
