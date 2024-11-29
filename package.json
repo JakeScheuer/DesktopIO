@@ -1,12 +1,13 @@
 {
   "name": "frontend",
-  "main": "main.js",
+  "main": "src/electron/main.js",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "electron .",
-    "react-start": "vite",
+    "react": "vite",
+    "electron": "electron .",
+    "start": "npm run react && npm run electron",
     "react-build": "vite build",
     "build": "npm run react-build && electron-builder"
   },
@@ -36,7 +37,7 @@
     "appId": "com.example.iocontroller",
     "files": [
       "dist/**/*",
-      "src/main/**/*"
+      "src/electron/**/*"
     ],
     "win": {
       "target": "nsis"

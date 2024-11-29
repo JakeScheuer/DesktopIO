@@ -1,3 +1,14 @@
+# Electron React App
+
+Boilerplate to create a "native" application using electron to interface with the OS and React as it's UI.
+
+UI is uses:
+
+- React 18
+- Tailwind CSS
+- Dasiy UI
+- Vite
+
 # IO Controller
 
 Managing IO between your tv, monitor, headphones, speakers, and other perephrials can be annoying. This project is to make a simple interface where you can configure different setups and manage your devices in a single window.
