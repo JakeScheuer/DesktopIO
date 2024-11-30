@@ -3,7 +3,7 @@
 The main use of this project is to create a IO controller for desktop. More details below.
 If you want to just create a different appliction using the same stack, start with the branch `boilerplate`.
 The stack uses electron to interact with the OS, and react for the UI.
-UI comes configured with React 18, Tailwind CSS, Dasiy UI, and Vite.
+UI comes configured with React 18, Tailwind CSS, Dasiy UI, Phosphor Icons, and Vite.
 
 To run start react server, then electron app:
 `npm run react`

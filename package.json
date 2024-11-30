@@ -12,6 +12,7 @@
     "build": "npm run react-build && electron-builder"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.7",
     "autoprefixer": "^10.4.20",
     "daisyui": "^4.12.14",
     "electron": "^33.2.0",

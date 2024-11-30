@@ -10,18 +10,23 @@ const DeviceSection = ({ name, devices }: DeviceSectionProps) => {
   const [devicesDisplayed, setDevices] = useState(devices);
 
   const toggleDevice = (systemName: string, required: boolean = false) => {
-    const index = devicesDisplayed.findIndex(
-      (it) => it.systemName === systemName
-    );
     let updated = [...devicesDisplayed];
+    const index = updated.findIndex((it) => it.systemName === systemName);
     if (required) {
       let devicesActive = 0;
-      devicesDisplayed.forEach((it) => it.isActive && devicesActive++);
+      updated.forEach((it) => it.isActive && devicesActive++);
       if (devicesActive === 1) {
         return;
       }
     }
     updated[index].isActive = !updated[index].isActive;
+    setDevices(updated);
+  };
+
+  const saveName = (systemName: string, name: string) => {
+    let updated = [...devicesDisplayed];
+    const index = updated.findIndex((it) => it.systemName === systemName);
+    updated[index].name = name;
     setDevices(updated);
   };
 
@@ -37,6 +42,7 @@ const DeviceSection = ({ name, devices }: DeviceSectionProps) => {
               isActive={d.isActive}
               systemName={d.systemName}
               toggleDevice={toggleDevice}
+              saveName={saveName}
             />
           );
         })}

@@ -1,4 +1,5 @@
 import React from "react";
+import EditableName from "./EditableName";
 
 export interface DeviceProps {
   name: string;
@@ -8,6 +9,7 @@ export interface DeviceProps {
 
 export interface DevicePropsState extends DeviceProps {
   toggleDevice: (systemName: string, required?: boolean) => void;
+  saveName: (systemName: string, name: string) => void;
 }
 
 const Device = ({
@@ -15,27 +17,47 @@ const Device = ({
   isActive,
   systemName,
   toggleDevice,
+  saveName,
 }: DevicePropsState) => {
+  const ToggleButton = () => {
+    return (
+      <input
+        type="checkbox"
+        className="toggle toggle-success"
+        checked={isActive}
+        onChange={() => toggleDevice(systemName)}
+      />
+    );
+  };
+
   const InactiveDevice = () => {
     return (
-      <div
-        className="flex flex-col p-4 gap-2 border rounded-md border-neutral hover:cursor-pointer"
-        onClick={() => toggleDevice(systemName)}
-      >
-        <span className="text-md">{name}</span>
-        <span className="text-sm text-neutral">{systemName}</span>
+      <div className="flex flex-row p-4 gap-2 border rounded-md border-neutral items-center">
+        <ToggleButton />
+        <div className="flex flex-col">
+          <EditableName
+            name={name}
+            systemName={systemName}
+            saveName={saveName}
+          />
+          <span className="text-xs pl-6">{systemName}</span>
+        </div>
       </div>
     );
   };
 
   const ActiveDevice = () => {
     return (
-      <div
-        className="flex flex-col p-4 gap-2 border rounded-md border-blue-500 hover:cursor-pointer"
-        onClick={() => toggleDevice(systemName)}
-      >
-        <span className="text-md font-semibold">{name}</span>
-        <span className="text-sm">{systemName}</span>
+      <div className="flex flex-row p-4 gap-2 border rounded-md border-blue-500 items-center">
+        <ToggleButton />
+        <div className="flex flex-col">
+          <EditableName
+            name={name}
+            systemName={systemName}
+            saveName={saveName}
+          />
+          <span className="text-xs pl-6">{systemName}</span>
+        </div>
       </div>
     );
   };
