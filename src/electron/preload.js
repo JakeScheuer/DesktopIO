@@ -1,5 +1,6 @@
-import { contextBridge } from "electron";
+import { contextBridge, ipcRenderer } from 'electron';
 
-contextBridge.exposeInMainWorld("api", {
-  test: () => console.log("Electron API exposed"),
+contextBridge.exposeInMainWorld('api', {
+  getDisplays: async () => ipcRenderer.invoke('get-displays'),
+  setPrimaryDisplay: async (displayId) => ipcRenderer.invoke('set-primary-display', displayId),
 });
